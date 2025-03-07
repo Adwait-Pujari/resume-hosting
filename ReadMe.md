@@ -130,13 +130,19 @@ Following the process-oriented guidance from Pfeiffer & Adkins, present your ins
          Category: <RESUME>
       ```
 
+
    4. **Include Your Resume:**
 
       Place your `resume.md` file in the Pelican content Directory (usually named content)
+      
+      <br> 
+
 
    5. **Review Configuration:**
 
       Open the `pelicanconf.py` file to ensure it includes your content directory and any additional settings required for your site.
+
+      <br> 
 
    6. **Build the site:**
 
@@ -145,6 +151,8 @@ Following the process-oriented guidance from Pfeiffer & Adkins, present your ins
       pelican content
       ```
       **Important** : Note you must be outside the content folder to run the pelican command.
+
+      <br> 
 
    7. **Test the site by running locally**
 
@@ -155,12 +163,35 @@ Following the process-oriented guidance from Pfeiffer & Adkins, present your ins
       This will generate a link and if followed to that link it will locally host the website on your computer.
 
 ### Step 4: Deploy the Site
-1. Push the changes to the remote repository:
+
+1. **Push the changes to the remote repository:**
+
    ```bash
    git push origin main
    ```
-2. Enable static site hosting on the forge (e.g., GitHub Pages, GitLab Pages).
-3. Obtain the URL of your hosted site and verify accessibility.
+   This uploads your project to GitHub and makes it available for hosting.
+
+<br> 
+
+2. **Enable static site hosting on GitHub Pages:**
+
+   - Navigate to your repository on GitHub.
+
+   - Click on Settings > Pages.
+
+   - Under "Source", select the main branch and save changes.
+
+   - GitHub will process your site, and after a few moments, you will see a URL where your site is hosted
+
+3. **Verify the Hosted Site:**
+
+   - Open the provided URL in a browser.
+
+   - Check that your resume appears correctly.
+
+   - If you see a 404 error, wait a few minutes and refresh the page.
+
+   - If the formatting is incorrect, review your Pelican theme settings and Markdown syntax.
 
 ## Technical Writing Best Practices
 1. **Use Lightweight Markup** – Markdown is easier to write and maintain than raw HTML.
