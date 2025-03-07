@@ -204,6 +204,7 @@ Following the process-oriented guidance from Pfeiffer & Adkins, present your ins
 - [Git Basics](https://git-scm.com/doc)
 - [Pelican Documentation](https://docs.getpelican.com/en/latest/)
 - [GitHub Pages Documentation](https://pages.github.com/)
+- [DevClub Github Tutorial](https://devclub.ca/github-tutorial)
 
 ## FAQ
 
