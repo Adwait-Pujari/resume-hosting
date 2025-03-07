@@ -14,7 +14,7 @@ Before proceeding, ensure you have the following:
 ## Instructions
 
 ### Step 1: Set Up Your Repository
-1. **Create a new repository** on your chosen forge.
+1. **Create a new repository** on GitHub.
 2. Clone the repository locally:
    ```bash
    git clone <repository-url>
@@ -36,7 +36,7 @@ Before proceeding, ensure you have the following:
 ### Step 3: Set Up Pelican on Windows
 Following the process-oriented guidance from Pfeiffer & Adkins, present your instructions in clear, ordered steps:
 
-#### A. Install Python for Windows
+### A. Install Python for Windows
    
    1. **Download the Installer:**
       
@@ -60,19 +60,99 @@ Following the process-oriented guidance from Pfeiffer & Adkins, present your ins
       ```
       This should display your installed Python version.
    
-<!-- 1. Install Pelican:
-   ```bash
-   pip install pelican
-   ```
-2. Initialize a Pelican project:
-   ```bash
-   pelican-quickstart
-   ```
-3. Configure `pelicanconf.py` to include `resume.md` in content.
-4. Generate the site:
-   ```bash
-   pelican content
-   ``` -->
+### B. Install Pelican and Dependencies
+
+   1. **Update pip (if necessary):**
+   
+      In Command Prompt or PowerShell (run as administrator if required), update pip:
+      ```bash
+      python -m pip install --upgrade pip
+      ```
+      <br>
+
+   2. **Navigate to the repository:** 
+   
+      Open the Github folder insitalized in Step 1.
+
+      <br>
+
+   3. **Install Pelican and Markdown:**
+      
+      Run:
+      ```bash
+      python -m pip install "pelican[markdown]"
+      ```
+
+   4. **Create a project:**
+
+      Create a folder for your site and create a skeleton project inside of it.
+      
+      Run the following command:
+      ```bash
+      mkdir ./projects
+      ```
+
+### C. Initialize and Configure Your Pelican Project
+
+   1. **Run Pelican Quickstart:**
+      
+      In your repository directory, initialize a new Pelican project:
+      ```bash
+      pelican-quickstart
+      ```
+
+   2. **Answer the given questions promtps after running pelican:**
+
+      ```bash
+         > Where do you want to create your new web site? [.]
+         > What will be the title of this web site? <Resume Title>
+         > Who will be the author of this web site? <Your Name>
+         > What will be the default language of this web site? [en]
+         > Do you want to specify a URL prefix? e.g., https://example.com (Y/n) n
+         > Do you want to enable article pagination? (Y/n) n
+         > How many articles per page do you want? [10]
+         > What is your time zone? [Country/City]
+         > Do you want to generate a tasks.py/Makefile to automate generation and publishing? (Y/n)
+         > Do you want to upload your website using FTP? (y/N) n
+         > Do you want to upload your website using SSH? (y/N) n
+         > Do you want to upload your website using Dropbox? (y/N) n
+         > Do you want to upload your website using S3? (y/N) n
+         > Do you want to upload your website using Rackspace Cloud Files? (y/N) n
+         > Do you want to upload your website using GitHub Pages? (y/N) y
+      ```
+
+   3. **Update your Resume:**
+
+      Update your `resume.md` with the first three lines, as it is required by the pelican to host your website.
+      ```bash
+         Title: <Your Title>
+         Date: <YYYY-MM-DD HH:MM>
+         Category: <RESUME>
+      ```
+
+   4. **Include Your Resume:**
+
+      Place your `resume.md` file in the Pelican content Directory (usually named content)
+
+   5. **Review Configuration:**
+
+      Open the `pelicanconf.py` file to ensure it includes your content directory and any additional settings required for your site.
+
+   6. **Build the site:**
+
+      Generate the static site by running:
+      ```
+      pelican content
+      ```
+      **Important** : Note you must be outside the content folder to run the pelican command.
+
+   7. **Test the site by running locally**
+
+      Use the following command to run locally:
+      ```bash
+      pelican --listen
+      ```
+      This will generate a link and if followed to that link it will locally host the website on your computer.
 
 ### Step 4: Deploy the Site
 1. Push the changes to the remote repository:
@@ -95,11 +175,24 @@ Following the process-oriented guidance from Pfeiffer & Adkins, present your ins
 - [GitHub Pages Documentation](https://pages.github.com/)
 
 ## FAQ
+
 **Q: Why use Markdown instead of raw HTML?**  
 *A: Markdown is simpler, more readable, and widely supported by static site generators.*
 
 **Q: My resume updates aren’t showing. What should I check?**  
-*A: Ensure you’ve committed and pushed changes, and that Pelican has rebuilt the site.*
+*A: Ensure you have committed and pushed changes, and that Pelican has rebuilt the site.*
+
+**Q: Why is my GitHub Pages site showing a 404 error?**  
+*A: GitHub Pages can take a few minutes to process changes. If the issue persists, verify that you have set the branch correctly in the Pages settings and that your content is in the correct directory.*
+
+**Q: How do I change the theme of my Pelican site?**  
+*A: You can download and apply themes from the [Pelican Themes Repository](https://github.com/getpelican/pelican-themes) by updating the `pelicanconf.py` file.*
+
+**Q: What should I do if Python is not recognized as a command?**  
+*A: Ensure Python is installed and added to the system PATH. You can check by running `python --version` in the command prompt. If not recognized, reinstall Python and check the "Add to PATH" option during installation.*
+
+**Q: How can I check if my site is being indexed by search engines?**  
+*A: GitHub Pages automatically includes a `robots.txt` file. To confirm indexing, use Google Search Console or inspect the `robots.txt` file in your browser by visiting `your-site-url/robots.txt`.*
 
 ## Credits
 - **Contributors**: Adwait Pujari
