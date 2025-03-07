@@ -1,15 +1,15 @@
 # Hosting a Resume on a Static Site Generator Using Forges
 
 ## Purpose
-This README provides instructions for formatting and hosting a resume on a forge that supports static site hosting. It is intended for individuals with basic knowledge of Markdown but no prior experience with Git, static site generators, or forges.
+This README provides clear, concise instructions for formatting and hosting a resume on a forge that supports static site hosting on a Windows system. Following modern technical writing principles, it ensures readability, ease of maintenance, and accessibility. This guide is intended for individuals with basic Markdown knowledge but no prior experience with Git, static site generators, or forges.
 
 ## Prerequisites
 Before proceeding, ensure you have the following:
-- A resume formatted in **Markdown**
-- A **Git** client installed ([Git Installation Guide](https://git-scm.com/downloads))
-- A chosen **static site generator** – For this documentation, we will be using **Pelican** (other options include **Jekyll, Hugo**)
-- **Python** installed ([Python Installation Guide](https://www.python.org/downloads/)) as it is required for Pelican
-- An account on a **forge** – For this demo, we will be using **GitHub** (other options include **GitLab, Codeberg**)
+- A resume formatted in **Markdown** (lightweight markup improves maintainability and readability).
+- A **Git** client installed ([Git Installation Guide](https://git-scm.com/downloads)).
+- A chosen **static site generator** – This guide uses **[Pelican](https://getpelican.com/)** (other options include **Jekyll, Hugo**).
+- **Python** installed ([Python Installation Guide](https://www.python.org/downloads/)) as required for Pelican.
+- An account on a **forge** – This guide uses **GitHub** (other options include **GitLab, Codeberg**).
 
 ## Instructions
 
@@ -27,22 +27,52 @@ Before proceeding, ensure you have the following:
 ### Step 2: Add Your Resume
 1. Create a new file named `resume.md` in the repository.
 2. Copy and paste your Markdown-formatted resume into `resume.md`.
-3. Add the file to Git:
+3. Stage and commit the file:
    ```bash
    git add resume.md
-   ```
-4. Commit the changes:
-   ```bash
    git commit -m "Added resume"
    ```
 
-### Step 3: Set Up a Static Site Generator
-1. Install your chosen static site generator.
-2. Configure it to recognize `resume.md` as content.
-3. Build the site locally to verify formatting:
+### Step 3: Set Up Pelican on Windows
+Following the process-oriented guidance from Pfeiffer & Adkins, present your instructions in clear, ordered steps:
+
+#### A. Install Python for Windows
+   
+   1. **Download the Installer:**
+      
+      Visit [Python](https://www.python.org/downloads/windows/) and download the latest Python installer for Windows.
+      
+      **Important** : After visiting the above website and selecting the **'Stable Python Version'** scroll down to the bottom of the page where it says **'Files'** and downloaded the recommended windows installer.
+   
+   <br>
+
+   2. **Configure the Installer:**
+
+      **Important**: During installation, check the box **"Add Python to PATH"** to ensure that Python and pip are accessible from the command line.
+   
+   <br>
+
+   3. **Verify Installation:**
+      
+      Open Command Prompt and run:
+      ```bash
+      python --version
+      ```
+      This should display your installed Python version.
+   
+<!-- 1. Install Pelican:
    ```bash
-   <generator-command> build
+   pip install pelican
    ```
+2. Initialize a Pelican project:
+   ```bash
+   pelican-quickstart
+   ```
+3. Configure `pelicanconf.py` to include `resume.md` in content.
+4. Generate the site:
+   ```bash
+   pelican content
+   ``` -->
 
 ### Step 4: Deploy the Site
 1. Push the changes to the remote repository:
@@ -50,28 +80,33 @@ Before proceeding, ensure you have the following:
    git push origin main
    ```
 2. Enable static site hosting on the forge (e.g., GitHub Pages, GitLab Pages).
-3. Obtain the URL of your hosted site and verify that your resume is accessible.
+3. Obtain the URL of your hosted site and verify accessibility.
 
-## Technical Writing Principles (Etter’s *Modern Technical Writing*)
-1. **Use a Lightweight Markup Language** – Markdown is chosen for its simplicity and readability.
-2. **Version Control Best Practices** – Git ensures changes are tracked and reversible.
-3. **Automation & Static Site Generators** – Automating site generation reduces manual effort.
-4. **Hosting on a Forge** – Publicly accessible repositories improve collaboration and maintainability.
+## Technical Writing Best Practices
+1. **Use Lightweight Markup** – Markdown is easier to write and maintain than raw HTML.
+2. **Leverage Version Control** – Git tracks changes efficiently, ensuring content accuracy.
+3. **Avoid Redundancy** – Maintain a single source of truth for documentation.
+4. **Make It Scannable** – Use headings, lists, and concise steps for clarity.
 
 ## Further Resources
 - [Markdown Guide](https://www.markdownguide.org/)
 - [Git Basics](https://git-scm.com/doc)
-- [Choosing a Static Site Generator](https://www.staticgen.com/)
+- [Pelican Documentation](https://docs.getpelican.com/en/latest/)
 - [GitHub Pages Documentation](https://pages.github.com/)
 
 ## FAQ
-**Q: Why is Markdown better than writing raw HTML?**  
+**Q: Why use Markdown instead of raw HTML?**  
 *A: Markdown is simpler, more readable, and widely supported by static site generators.*
 
-**Q: I updated my resume, but changes aren’t showing. Why?**  
-*A: Ensure you have committed and pushed the changes, and your static site generator has rebuilt the site.*
+**Q: My resume updates aren’t showing. What should I check?**  
+*A: Ensure you’ve committed and pushed changes, and that Pelican has rebuilt the site.*
 
 ## Credits
-- Contributors: [Your Name]
-- Static site themes, images, and third-party resources are credited as per their licenses.
+- **Contributors**: Adwait Pujari
+- **Peer Review Contributors**: Om Sevek, Meshvi Patel
+- **Third-Party Tools and Resources**:  
+  - Static site templates provided by [Pelican Themes](https://github.com/getpelican/pelican-themes)  
+  - Guidance from GitHub Pages documentation and Markdown tutorials  
+- **Instructional References**:  
+  - Andrew Etter’s principles on using lightweight markup and version control for effective documentation
 
