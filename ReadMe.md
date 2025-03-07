@@ -234,4 +234,5 @@ Following the process-oriented guidance from Pfeiffer & Adkins, present your ins
   - Guidance from GitHub Pages documentation and Markdown tutorials  
 - **Instructional References**:  
   - Andrew Etter’s principles on using lightweight markup and version control for effective documentation
+  - **Technical Communication: A Practical Approach** by William S. Pfeiffer and Kaye Adkins (Chapter 8 for process explanations and instructions)
 
